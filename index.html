@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+  <script>
+    // Capitalize the first letter
+    function capitalize(input) {
+      return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+    }
+
+    // Randomize computer's hand
+    function computerPlay() {
+      const hand = ['rock', 'paper', 'scissors'];
+      const random = Math.floor(Math.random() * hand.length);
+      return hand[random];
+    }
+
+    // Get result
+    function getResult(playerSelection, computerSelection) {
+      playerSelection = playerSelection.toLowerCase();
+      if (playerSelection === computerSelection) {
+        return "draw";
+      } else if ( // If player wins
+        (playerSelection === 'rock' && computerSelection === 'scissors') || 
+        (playerSelection === 'scissors' && computerSelection === 'paper') ||
+        (playerSelection === 'paper' && computerSelection === 'rock')) {
+          return "win";
+      } else if ( // If player loses
+        (playerSelection === 'rock' && computerSelection === 'paper') ||
+        (playerSelection === 'scissors' && computerSelection === 'rock') ||
+        (playerSelection === 'paper' && computerSelection === 'scissors')) {
+          return "lose";
+        }
+    }
+
+    // Play a round 
+    function playRound() {
+      // Prompt input from user
+      const playerSelection = prompt("Rock, Paper, Scissors?");
+      console.log("You throw " + playerSelection.toLowerCase());
+
+      // Get computer's hand
+      const computerSelection = computerPlay();
+      console.log("Opponent throws " + computerSelection);
+
+      const result = getResult(playerSelection, computerSelection);
+
+      if (result === "win") {
+        console.log(`You win! ${capitalize(playerSelection)} beats ${computerSelection}.`);
+      } else if (result === "lose") {
+        console.log(`You lose! ${capitalize(computerSelection)} beats ${playerSelection}.`);
+      } else {
+        console.log("It's a draw");
+      }
+
+      return result;
+    }
+
+    // Keep score and display final score 
+    function game () {
+      let playerScore = 0; 
+      let computerScore = 0;
+
+      const result1 = playRound();
+        if (result1 === "win") {
+          playerScore++;
+        } else if (result1 === "lose") {
+          computerScore++; 
+        }
+      const result2 = playRound();
+        if (result2 === "win") {
+          playerScore++;
+        } else if (result2 === "lose") {
+          computerScore++; 
+        }
+      const result3 = playRound();
+        if (result3 === "win") {
+          playerScore++;
+        } else if (result3 === "lose") {
+          computerScore++; 
+        }
+      const result4 = playRound();
+        if (result4 === "win") {
+          playerScore++;
+        } else if (result4 === "lose") {
+          computerScore++; 
+        }
+      const result5 = playRound();
+        if (result5 === "win") {
+          playerScore++;
+        } else if (result5 === "lose") {
+          computerScore++; 
+        }
+
+      const finalResult = `Final score: ${playerScore} vs ${computerScore}`;
+      console.log(finalResult);
+    }
+
+    game();
+
+  </script>
+  
+</body>
+</html>
