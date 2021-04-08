@@ -1,0 +1,110 @@
+@import url(https://db.onlinewebfonts.com/c/6c02f15fdbc9dd7c482b52b06d8e0a6c?family=Super+Mario+256);
+@font-face {font-family: "Super Mario 256"; src: url("https://db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.eot"); src: url("https://db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.woff") format("woff"), url("https://db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/6c02f15fdbc9dd7c482b52b06d8e0a6c.svg#Super Mario 256") format("svg"); } 
+
+:root {
+  font-family: 'Super Mario 256', sans-serif;
+  text-transform: uppercase;
+  background-color: #5e91fe;
+}
+
+body {
+  margin: 0;
+  background-image: url(images/mario-brick.png);
+  background-size: auto;
+  background-repeat: repeat-x;
+  background-position-y: bottom;  
+}
+
+header {
+  height: 35px;
+  text-align: center;
+  font-size: 35px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.play {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.player {
+  font-size: 20px;
+  text-align: center;
+  width: 200px;
+  min-height: calc(100vh - (35px + 20px + 20px));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  height: 100px;
+  width: 100px;
+  font-family: inherit;
+  margin: 5px;
+  border-radius: 0.50rem;
+  cursor: pointer;
+  border: 3px double black;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
+  transition-duration: 0.4s;
+}
+
+button.rock {
+  background-image: url(images/rock-computer.png);
+}
+
+button.scissors {
+  background-image: url(images/scissors.png);
+}
+
+button.paper {
+  background-image: url(images/paper.png);
+}
+
+.player-human button.rock {
+  transform: scaleX(-1);
+}
+
+.player-human button:hover {
+  background-color: #ff0000;
+}
+
+.player-computer button:not(.rock) {
+  transform: scaleX(-1);
+}
+
+.player img {
+  width: 120px;
+  margin-bottom: 28px;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.score-title {
+  margin-top: 150px;
+  margin-bottom: 120px;
+}
+
+.score {
+  font-size: 30px;
+  margin: 0;
+  margin-top: auto;
+}

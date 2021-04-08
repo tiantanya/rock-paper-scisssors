@@ -4,9 +4,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!--<link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet"> -->
+  <link href="https://db.onlinewebfonts.com/c/6c02f15fdbc9dd7c482b52b06d8e0a6c?family=Super+Mario+256" rel="stylesheet" type="text/css"/> 
+  <link rel="stylesheet" href="index.css">
   <title>Rock, Paper, Scissors</title>
 </head>
 <body>
+  <header>Rock, Paper, or Scissors?</header>
+  
+  <div class="play">
+    <div class="player player-human"> 
+      <p>You</p>
+      <div class="buttons">
+        <button class="rock"></button>
+        <button class="paper"></button>
+        <button class="scissors"></button>
+      </div>
+      <p class="score">0</p>
+      <img src="images/mario-pipe.png">
+    </div>
+    
+    <div class="round">
+      <p class="round-title">Round:</p>
+      <p>1</p>
+      <p class="score-title">Score</p>
+    </div>
+    
+    <div class="player player-computer">
+      <p>Computer</p>
+      <div class="buttons">
+        <button class="rock"></button>
+        <button class="paper"></button>
+        <button class="scissors"></button>
+      </div>
+      <p class="score">0</p>
+      <img src="images/mario-pipe.png">
+    </div> 
+  </div>
   <script>
     // Capitalize the first letter
     function capitalize(input) {
